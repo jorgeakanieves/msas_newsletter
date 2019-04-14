@@ -36,7 +36,7 @@ Due of the requirements of simple logic with no processing, analysis, aggregatio
 May I use others, but surely there´ll be requirements for searching 'email' and 'newsletterid' and other fields perhaps. It could scale good with not a huge volume.
 
 
-## Security:
+## Security
 
 Microservices will be deployed in Kubernetes so it will manage the security by network policies for public and private msas with control over ingress TCP traffic and port filtering. 
 
@@ -46,7 +46,7 @@ Microservices will be deployed in Kubernetes so it will manage the security by n
 * Deployed as PODS on Kubernetes
 * Charts for kubernetes
 
-## CD/CI:
+## CD/CI
 
 * Git
 * Jenkins jobs
