@@ -1,7 +1,5 @@
 # msas_newsletter
 
-Here´s what I did. I´ve to apologyse because I was really busy this week and I couldn´t complete the challenge. I tried to write code and didn´t test any of the services. By other hand I´ve to say that this is not my day by day domain (related only to backend microservices) because I´m more focused on BigData components (Processing, streaming, App governance...). Anyway I know SpringCloud ecosystem and this is what I did.
-
 ## Newsletter subscriptions
 
 I can use Springboot for this purpouse. Another interesting enterprise architecture could be Lagom framework, could be an attractive alternative with perhaps better performance than SpringCloud ecosystem.
