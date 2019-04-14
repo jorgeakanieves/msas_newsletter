@@ -1,0 +1,31 @@
+nl_subscriptions_service:
+  name: nl_subscriptions
+  type: NodePort
+  livenessPath: /newsletter/actuator/health
+  externalPort: 8080
+  readinessPath: /newsletter/actuator/health
+  internalPort: 8443
+# Used to create an Ingress record.
+ingress:
+  enabled: true
+  # Very important. We use path to select service.
+  path: /newsletter
+  hosts:
+    - host.provider.com
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefix
+  tls:
+    # Secrets must be manually created in the namespace.
+    - secretName: provider-secret
+      hosts:
+        - host.provider.com
+nl_database_service:
+  name: nl_database
+  type: NodePort
+  internalPort: 8081
+
+nl_emails_service:
+  name: nl_database
+  type: NodePort
+  internalPort: 8082

@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  application:
+    name: nl_database
+
+---
+spring:
+  kafka:
+    consumer:
+      properties:
+        group-id: events-group
+        auto-offset-reset: earliest
+        header-mode: raw
+    producer:
+      properties:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+        header-mode: raw
+    bootstrap-servers: localhost:9092
+---
+spring.mail.host: smtp.provider.com
+spring.mail.port: 587
+spring.mail.username: admin@provider.com
+spring.mail.password: V3ry_Str0ng_Password
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+spring.mail.properties.mail.smtp.starttls.required: true
+
+spring.mail.scheduler.persistence.enabled: false
+spring.mail.scheduler.persistence.redis.embedded: false
+spring.mail.scheduler.persistence.redis.enabled: false

@@ -1,0 +1,42 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: false
+      user: user
+      password: password
+
+logging:
+  levels:
+    org.springframework: INFO
+
+server:
+   port: 443
+   ssl:
+      key-store: keystore.p12
+      key-store-password: springboot
+      keyStoreType: PKCS12
+      keyAlias: https-key
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://provider.host.com/project-config-server/
+      failFast: true
+      user: user
+      password: password
+---
+spring:
+  profiles: int
+  cloud:
+    config:
+
+---
+spring:
+  profiles: prod
+  cloud:
+    config:
+
+
+    

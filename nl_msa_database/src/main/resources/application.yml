@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  application:
+    name: nl_emails
+
+---
+spring:
+  kafka:
+    consumer:
+      properties:
+        group-id: events-group
+        auto-offset-reset: earliest
+        header-mode: raw
+    producer:
+      properties:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+        header-mode: raw
+    bootstrap-servers: localhost:9092
+---
+spring.datasource.driverClassName: org.postgresql.Driver
+spring.datasource.url: jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username: user
+spring.datasource.password: V3ry_Str0ng_Password
+spring.datasource.testWhileIdle: true
+spring.datasource.validationQuery: SELECT 1
+spring.jpa.show-sql: true
+spring.jpa.hibernate.ddl-auto: update
+spring.jpa.hibernate.naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect

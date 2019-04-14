@@ -1,0 +1,1 @@
+package com.jene.newsletter.microservices.subscription.model;

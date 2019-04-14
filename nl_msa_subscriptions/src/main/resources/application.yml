@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  application:
+    name: nl_subscriptions
+
+server.servlet.context-path: /newsletter
+---
+spring:
+  kafka:
+    consumer:
+      properties:
+        group-id: events-group
+        auto-offset-reset: earliest
+        header-mode: raw
+    producer:
+      properties:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+        header-mode: raw
+    bootstrap-servers: localhost:9092
+

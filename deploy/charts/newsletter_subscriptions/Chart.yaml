@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for deploying Newsletter MSas into Kubernetes
+name: newsletter_subscriptions
+version: 0.0.1

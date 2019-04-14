@@ -1,0 +1,13 @@
+version: '3'
+services:
+    nlsubs-service:
+        image: registry.domain.com/project_name/nl_msa_emails:0.0.1
+        restart: always
+        networks:
+            - workbench 
+        restart: always
+        ports:
+            - "8082:8080"
+networks:
+  workbench:
+    external: true

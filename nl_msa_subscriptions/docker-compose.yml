@@ -1,0 +1,13 @@
+version: '3'
+services:
+    nl_subscriptions_service:
+        image: registry.domain.com/project_name/nl_msa_subscriptions:0.0.1
+        restart: always
+        networks:
+            - workbench 
+        restart: always
+        ports:
+            - "8443:443"
+networks:
+  workbench:
+    external: true
